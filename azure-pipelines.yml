@@ -20,7 +20,7 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: false
-    projects: '**/*.csproj'
+    projects: '**/DeltaEndPoint/*.csproj'
 
 - task: DotNetCoreCLI@2
   inputs:
