@@ -48,6 +48,8 @@ namespace DeltaEndpoint.Models
                 entity.Property(e => e.Location)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.Media).HasColumnType("image");
             });
         }
     }
