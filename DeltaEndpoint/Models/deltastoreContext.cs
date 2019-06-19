@@ -20,7 +20,6 @@ namespace DeltaEndpoint.Models
         {
             return Startup.ConnectionString;
         }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -32,7 +31,7 @@ namespace DeltaEndpoint.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.0-rtm-35687");
+            modelBuilder.HasAnnotation("ProductVersion", "2.2.4-servicing-10062");
 
             modelBuilder.Entity<Incident>(entity =>
             {
@@ -49,8 +48,6 @@ namespace DeltaEndpoint.Models
                 entity.Property(e => e.Location)
                     .HasMaxLength(20)
                     .IsUnicode(false);
-
-                entity.Property(e => e.Media).HasColumnType("image");
             });
         }
     }

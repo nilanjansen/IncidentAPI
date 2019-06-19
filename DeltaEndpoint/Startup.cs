@@ -62,6 +62,7 @@ namespace DeltaEndpoint
                 //... and tell Swagger to use those XML comments.
                 c.IncludeXmlComments(xmlPath);
             });
+            ConnectionString = Configuration["ConnectionStrings:DefaultConnection"];
             services.AddDbContext<deltastoreContext>
                 (options => options.UseSqlServer(ConnectionString,
                 providerOptions => providerOptions.EnableRetryOnFailure()));

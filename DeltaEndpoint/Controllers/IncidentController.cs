@@ -18,7 +18,7 @@ namespace DeltaEndpoint.Controllers
         {
             _incidentService = incidentService;
         }
-        // GET api/incidents
+        [Route("getall")]
         [HttpGet]
         public ActionResult<IEnumerable<Incident>> Get()
         {
@@ -26,7 +26,7 @@ namespace DeltaEndpoint.Controllers
             return Ok(incidents);
         }
 
-        // GET api/incidents/5
+        // GET api/incident/5
         [HttpGet("{id}")]
         public ActionResult<Incident> Get(int id)
         {
