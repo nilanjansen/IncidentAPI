@@ -42,11 +42,11 @@ namespace DeltaEndpoint.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.IssueType)
-                    .HasMaxLength(6)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Location)
-                    .HasMaxLength(20)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
             });
         }

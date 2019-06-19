@@ -1,4 +1,5 @@
 ﻿using DeltaEndpoint.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,8 +35,27 @@ namespace DeltaEndpoint.Service
 
         public void PostIncident(Incident incident)
         {
-            _dbContext.Incident.Add(incident);
-            _dbContext.SaveChanges();
+            try
+            {
+                
+                if (incident != null)
+                {
+                    _dbContext.Incident.Add(incident);
+                    _dbContext.SaveChanges();
+                }
+                
+                
+            }
+            catch (DbUpdateException ex)
+            {
+
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
